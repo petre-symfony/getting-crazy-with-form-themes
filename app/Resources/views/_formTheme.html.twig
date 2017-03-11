@@ -4,7 +4,7 @@
   <div class="form-group {% if (not compound or force_error|default(false)) and not valid %}has-error{% endif %}{{ showErrorIcon ? ' has-feedback' : ''}}">
     {{- form_label(form) -}}
     {{- form_widget(form) -}}
-    {% if help %}
+    {% if help|default %}
       <span class="help-block">{{ help }}</span>
     {% endif %}  
     {{- form_errors(form) -}}
