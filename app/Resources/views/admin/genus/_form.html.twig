@@ -1,5 +1,6 @@
 {{ form_start(genusForm) }}
-    
+    {{ form_errors(genusForm) }}
 
+    {{ form_widget(genusForm) }}
     <button type="submit" class="btn btn-primary" formnovalidate>Save</button>
 {{ form_end(genusForm) }}
