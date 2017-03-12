@@ -14,7 +14,13 @@
     {{ form_row(genusForm.isPublished, {
       help: 'Should this genus be shown on the site?'
     }) }}
-    {{ form_row(genusForm.firstDiscoveredAt.year) }}
+    
+    {{ form_label(genusForm.firstDiscoveredAt.year) }}
+    <select name="{{genusForm.firstDiscoveredAt.year.vars.full_name}}" 
+        id="{{genusForm.firstDiscoveredAt.year.vars.id}}">
+    </select>
+    {{ form_errors(genusForm.firstDiscoveredAt.year) }}
+    
     {{ form_row(genusForm.firstDiscoveredAt.month) }}
     {{ form_row(genusForm.firstDiscoveredAt.day) }}
 
