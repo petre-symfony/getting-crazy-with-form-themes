@@ -19,7 +19,10 @@
     <select name="{{genusForm.firstDiscoveredAt.year.vars.full_name}}" 
         id="{{genusForm.firstDiscoveredAt.year.vars.id}}">
       {% for choice in genusForm.firstDiscoveredAt.year.vars.choices %}
-        <option value="{{choice.value}}">{{ choice.label }}</option>
+        <option value="{{choice.value}}" 
+            {{ choice.value == genusForm.firstDiscoveredAt.year.vars.data ? ' selected' : '' }}>
+          {{ choice.label }}
+        </option>
       {% endfor %}  
     </select>
     {{ form_errors(genusForm.firstDiscoveredAt.year) }}
