@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class HelpFormExtension extends AbstractTypeExtension{
   
@@ -14,6 +15,12 @@ class HelpFormExtension extends AbstractTypeExtension{
   }
   
   public function buildView(FormView $view, FormInterface $form, array $options){
-    $view->vars['help'] = 'TURTLES';
+    if ($options['help']){
+      $view->vars['help'] = $options['help'];
+    }
+  }
+  
+  public function configureOptions(OptionsResolver $resolver) {
+    $resolver->setDefault('help', null);
   }
 }
