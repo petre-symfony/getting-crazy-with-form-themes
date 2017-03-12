@@ -6,7 +6,9 @@
     {% if help|default %}
       {% set attr = attr|merge({ 'aria-describedby': 'help-block-'~id })%}
     {% endif %} 
-    {{- form_widget(form) -}}
+    {{- form_widget(form, {
+      'attr': attr
+    }) -}}
     {% if help|default %}
       <span class="help-block" id="help-block-{{ id }}}">{{ help }}</span>
     {% endif %}  
