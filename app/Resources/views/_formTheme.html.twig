@@ -4,7 +4,7 @@
   <div class="form-group {% if (not compound or force_error|default(false)) and not valid %}has-error{% endif %}{{ showErrorIcon ? ' has-feedback' : ''}}">
     {{- form_label(form) -}}
     {% if help|default %}
-      {% set attr = attr|merge({'aria-describedby': })%}
+      {% set attr = attr|merge({ 'aria-describedby': 'help-block-'~id })%}
     {% endif %} 
     {{- form_widget(form) -}}
     {% if help|default %}
