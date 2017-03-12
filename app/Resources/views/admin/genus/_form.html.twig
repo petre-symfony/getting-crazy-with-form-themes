@@ -16,6 +16,7 @@
     }) }}
     
     {{ form_label(genusForm.firstDiscoveredAt.year) }}
+    {% do genusForm.firstDiscoveredAt.year.setRendered() %}
     <select name="{{genusForm.firstDiscoveredAt.year.vars.full_name}}" 
         id="{{genusForm.firstDiscoveredAt.year.vars.id}}">
       {% for choice in genusForm.firstDiscoveredAt.year.vars.choices %}
